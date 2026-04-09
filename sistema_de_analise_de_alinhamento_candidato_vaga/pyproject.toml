@@ -1,0 +1,24 @@
+[project]
+name = "sistema_de_analise_de_alinhamento_candidato_vaga"
+version = "0.1.0"
+description = "sistema_de_analise_de_alinhamento_candidato_vaga using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[litellm,tools]==1.9.3",
+]
+
+[project.scripts]
+sistema_de_analise_de_alinhamento_candidato_vaga = "sistema_de_analise_de_alinhamento_candidato_vaga.main:run"
+run_crew = "sistema_de_analise_de_alinhamento_candidato_vaga.main:run"
+train = "sistema_de_analise_de_alinhamento_candidato_vaga.main:train"
+replay = "sistema_de_analise_de_alinhamento_candidato_vaga.main:replay"
+test = "sistema_de_analise_de_alinhamento_candidato_vaga.main:test"
+run_with_trigger = "sistema_de_analise_de_alinhamento_candidato_vaga.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

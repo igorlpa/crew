@@ -1,0 +1,39 @@
+---
+analyze_curriculum:
+  description: Analisar detalhadamente o curriculo do candidato localizado em {caminho_curriculo}.
+    Extrair e organizar informacoes sobre formacao academica, experiencia profissional,
+    competencias tecnicas, certificacoes, projetos relevantes e outras qualificacoes.
+    Identificar pontos fortes e areas de experiencia que podem ser relevantes para
+    a posicao.
+  expected_output: 'Relatorio estruturado com: 1) Resumo profissional do candidato,
+    2) Competencias tecnicas identificadas, 3) Experiencia profissional relevante,
+    4) Formacao academica, 5) Certificacoes e qualificacoes adicionais, 6) Pontos
+    fortes evidenciados no curriculo'
+  agent: curriculum_analysis_specialist
+analyze_behavioral_assessment:
+  description: Analisar as respostas do candidato ao questionario comportamental localizado
+    em {caminho_respostas_questionario}. Considerar tambem o questionario utilizado
+    em {caminho_questionario} para entender o contexto das perguntas. Identificar
+    tracos de personalidade, soft skills, motivacoes, valores, estilo de lideranca
+    e adequacao cultural com base nas respostas fornecidas.
+  expected_output: 'Relatorio comportamental incluindo: 1) Perfil comportamental do
+    candidato, 2) Soft skills identificadas, 3) Motivacoes e valores evidenciados,
+    4) Estilo de trabalho e lideranca, 5) Pontos fortes comportamentais, 6) Areas
+    de desenvolvimento comportamental'
+  agent: behavioral_assessment_analyst
+evaluate_job_alignment:
+  description: Com base na descricao da vaga em {descricao_vaga} e nas analises do
+    curriculo e questionario comportamental, realizar uma avaliacao completa de alinhamento
+    candidato-vaga. Comparar requisitos tecnico e comportamentais da vaga com o perfil
+    do candidato. Identificar gaps, pontos de alinhamento e gerar recomendacao final
+    fundamentada. 
+  expected_output: 'Relatorio final de avaliacao contendo: 1) Pontos fortes do candidato
+    para a posicao, 2) Areas de melhoria ou gaps identificados, 3) Alinhamento com
+    requisitos tecnicos da vaga, 4) Alinhamento com perfil comportamental desejado,
+    5) Recomendacao especifica (descartar, aprovar para entrevista, aprovar com ressalvas),
+    6) Justificativa detalhada da recomendacao, 7) Se aplicavel, detalhamento das
+    ressalvas ou proximos passos sugeridos'
+  agent: job_alignment_evaluator
+  context:
+  - analyze_curriculum
+  - analyze_behavioral_assessment

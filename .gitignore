@@ -205,3 +205,4 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+sistema_de_analise_de_alinhamento_candidato_vaga/resources
